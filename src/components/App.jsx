@@ -23,6 +23,14 @@ export class App extends Component {
       number,
     };
 
+    if (
+      this.state.contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      return alert(`${name} is already in contacts`);
+    }
+
     this.setState(({ contacts }) => ({
       contacts: [Contact, ...contacts],
     }));
@@ -48,7 +56,7 @@ export class App extends Component {
     );
 
     return (
-      <>
+      <div className="container">
         <Section title="Phone Book">
           <Form onSubmit={this.formSubmitHandler}></Form>
         </Section>
@@ -59,7 +67,7 @@ export class App extends Component {
             onDeleteContact={this.deleteContact}
           />
         </Section>
-      </>
+      </div>
     );
   }
 }

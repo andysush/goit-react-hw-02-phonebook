@@ -1,0 +1,6 @@
+.contact__list {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
