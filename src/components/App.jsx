@@ -22,12 +22,10 @@ export class App extends Component {
       name,
       number,
     };
-
-    if (
-      this.state.contacts.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
-      )
-    ) {
+    const isExist = this.state.contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+    if (isExist) {
       return alert(`${name} is already in contacts`);
     }
 
